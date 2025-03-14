@@ -1,0 +1,253 @@
+[gd_scene load_steps=17 format=4 uid="uid://3i5wr1mnjjdo"]
+
+[ext_resource type="Texture2D" uid="uid://7qpxcnid04il" path="res://firstdoor_violetdoor.jpg" id="1_y2rij"]
+[ext_resource type="Shader" path="res://firstdoor.gdshader" id="2_up1tu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcmyi"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gqh7x"]
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYACgAGAAcABAALAAUABAAIAAsACQAGAAoABAAJAAgABgAJAAQABQAKAAcABQALAAoABQADAAEABQAHAAMADQABAA8AAgAOAAMAAgAMAA4ADQAAAAEAAgANAAwAAAANAAIADgABAAMADgAPAAEABQAAAAQABQABAAAACAAMAA0ACAAJAAwACQAOAAwACQAKAA4ACwAOAAoACwAPAA4ADQALAAgADQAPAAsA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAAAAyO76FwAAAADI7mrqAAAAAFABauoAAAAAUAH6FwAA///I7mrqAAD//8ju+hcAAP//UAFq6gAA//9QAfoXAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6tvpj"]
+resource_name = "firstdoor_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f/+f/3//n/9//1//f/9f/3//X/9//5//P/+f/z//n/8//1//P/9f/z//X/8//5//v/+f/7//3/9//1//v/9f/7//H/9//1//v/+f////nwAA/9//P/9f////X////x//P/9fAACxm/3FPsf/f/+fPqexm5n6Psf/P/+fwBhTYJn6U2CZ+v9fwBjAOP8/U2D9xVNg/cX/Xz6nwDj/f5Ku/z//n2wxsZtkRZKu/3//n5KOsZsAev9fbDFsUf8/U2BkRf9fko5sUf9/U2AAeg=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AQAVAA4AAQAHABUACgAUAAYACgAZABQAIQATABcADAAlABAADAAaACUAHQATACEADAAdABoAEwAdAAwADwAgABYADwAkACAAEQAJAAMAEQAYAAkALQAFADMACAAwAAsACAAqADAALQACAAUACAAtACoAAgAtAAgAMAAFAAsAMAAzAAUAEgAAAA0AEgAEAAAAGwAoACsAGwAeACgAHwAuACkAHwAiAC4AJwAvACMAJwAyAC8ALAAmABwALAAxACYA"),
+"material": SubResource("StandardMaterial3D_bcmyi"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("/////wAA////////AAD///////8AAFTV//8AAAAA/7///wAAAAD/////AAAAAFTV/////////7///////////////////1TV//8AAP///7///wAA////v///AAD//1TVAAD//wAAVNUAAP//AAD//wAA//8AAP//AAAAAAAAVNUAAAAAAABU1QAAAAAAAP+/AAAAAAAA//8AAP////9U1QAA//////+/AAD///////8AAAAA//9U1QAAAAD//1TVAAAAAP///78AAAAA////vwAAyO76F1TVAADI7voXAAAAAMju+hf/PwAAyO5q6lTVAADI7mrqAAAAAMjuauoAAAAAUAFq6lTVAABQAWrqVNUAAFABauoAAAAAUAFq6v8/AABQAfoXVNUAAFAB+hdU1QAAUAH6F/8/AABQAfoX/z///8juauoAAP//yO5q6gAA///I7mrqVNX//8ju+hcAAP//yO76F/8////I7voXVNX//1ABauoAAP//UAFq6v8///9QAWrqVNX//1AB+hf/P///UAH6F/8///9QAfoXVNX/v/+//3//v6oqqioAAP9//7//v6oqqir//////3//v6oqqioAAP9//////6oqqipU1VTV/7//v/9//79U1VTVVNVU1QAA/3//v/+/VNVU1f//////f/+/VNVU1VTVVNUAAP9//////1TVVNX/f/8//////1TVVNX/f/8//7//v1TVVNVU1VTV/7//v////39U1VTVVNVU1f////////9//3//P/+//7+qKqoq/3//P/////+qKqoq/7//v////3+qKqoq/////////3+qKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gqh7x")
+
+[sub_resource type="Animation" id="Animation_j8bic"]
+resource_name = "opendoor"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/Cube:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.83333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0398245, 0), Vector3(0, -1.91337, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.63333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_c07rw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/Cube:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0398245, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sgmha"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/Cube:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.91288, 0), Vector3(0, 0.0398245, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.23333, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4aoo7"]
+_data = {
+"RESET": SubResource("Animation_c07rw"),
+"closedoor": SubResource("Animation_sgmha"),
+"opendoor": SubResource("Animation_j8bic")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbu4i"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_y2rij")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qgqwh"]
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n5gwh"]
+resource_name = "firstdoor_Cube"
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"attribute_data": PackedByteArray("2bWR5a/Dp9UZxsGYvqbR/amvJu6xxv397bwzuqLPobDsolGZ0LNY18Cz98afpBX9qsYYmaG8GuX//3SurcaB/fGjI+UrtcnwwaO/mAu1prVN1NzHwKOX/jx7//+DqirI"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQAUAA4AAQAHABQACgATAAYACgAXABMAFQAMABIAFQAPAAwAEAAJAAMAEAAWAAkABQAIAAIABQALAAgAEQAAAA0AEQAEAAAA"),
+"material": SubResource("StandardMaterial3D_cbu4i"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(2.2402, 1.72876, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA////////AAB26f////8AAP+///8AAAAAOcP//wAAAAD/////AAAAAP+/////////8Y3////////17/////////+///8AAP//Fcb//wAA//+nhf//AAD///+/AAD//wAAGwAAAP//AAD//wAA//8AAF/JAAAAAAAATwAAAAAAAAAVxgAAAAAAAP//AAD/////GAAAAP////+nhQAA/////3bpAAAAAP//GwAAAAAA//8q5AAAAAD//6CCxYc4+BLLJhZagLUApxdPr7WQSe/FfxwA/////xiQ8rfFfxwASzrZYv/////YfpMADkAdgIB9f/2p3lQ9K0BXgEs62WLFhzj44/8NwP////8SyyYWDkAdgN9kj03/f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qgqwh")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eapaq"]
+points = PackedVector3Array(0.12634, 0.882255, 0.01472, 0.12634, 0.882255, -1.98528, -1.87366, 0.882255, 0.01472, 0.12634, -1.11774, 0.01472, 0.12634, -1.11774, -1.98528, -1.87366, 0.882255, -1.98528, -1.87366, -1.11774, 0.01472, -1.87366, -1.11774, -1.98528)
+
+[sub_resource type="QuadMesh" id="QuadMesh_l1vgp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jvig5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rgec"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_up1tu")
+shader_parameter/texture_albedo = SubResource("ViewportTexture_jvig5")
+
+[node name="firstdoor" type="Node3D"]
+
+[node name="Cube_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.252549, 0, 0, 0, 3.40793, 0, 0, 0, 1.83743, -0.315726, 3.70615, 3.28459)
+mesh = SubResource("ArrayMesh_6tvpj")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4aoo7")
+}
+
+[node name="door" type="StaticBody3D" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="door"]
+transform = Transform3D(0.229779, 0, 0.0601358, 0, 3.16128, 0, -0.00915567, 0, 1.50922, -0.302841, 3.46549, 2.97962)
+mesh = SubResource("ArrayMesh_n5gwh")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_eapaq")
+
+[node name="portal" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.163855, 0, -1.09512, 0, 6.52846, 0, 3.32883, 0, 0.0539049, -0.552292, 3.26288, 1.518)
+mesh = SubResource("QuadMesh_l1vgp")
+surface_material_override/0 = SubResource("ShaderMaterial_7rgec")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.391823, -0.135228, 0.910048, 9.77739e-09, 0.989139, 0.146981, -0.92004, -0.0575905, 0.387568, 7.40379, 3.15589, 8.50742)

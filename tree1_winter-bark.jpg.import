@@ -1,0 +1,30 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://wqx4g4b1uxgc"
+path.s3tc="res://.godot/imported/tree1_winter-bark.jpg-e719aebaa97539d340ef689d1da267cf.s3tc.ctex3d"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "384e1bb52b9c5d720d649c0de0e721ec"
+}
+
+[deps]
+
+source_file="res://tree1_winter-bark.jpg"
+dest_files=["res://.godot/imported/tree1_winter-bark.jpg-e719aebaa97539d340ef689d1da267cf.s3tc.ctex3d"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/horizontal=8
+slices/vertical=8

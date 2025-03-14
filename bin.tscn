@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://vwnx5jy773jj"]
+
+[sub_resource type="Environment" id="Environment_g6sbs"]
+background_mode = 1
+background_color = Color(0.24281, 0.0879242, 0.230996, 1)
+background_energy_multiplier = 1.93
+
+[node name="bin" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g6sbs")
