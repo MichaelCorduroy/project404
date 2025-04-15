@@ -83,7 +83,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r1q4m")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q4nko"]
-radius = 0.824611
+radius = 0.415095
 height = 4.74993
 
 [node name="evergreen1" type="Node3D"]
@@ -104,5 +104,6 @@ mesh = SubResource("ArrayMesh_4y5c1")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SnowTree1/StaticBody3D"]
-transform = Transform3D(0.999419, -0.0339938, -0.00265269, -4.0647e-09, 0.0777981, -0.99697, 0.0340972, 0.996391, 0.0777528, 2.09279, 2.54582, 2.34535)
+transform = Transform3D(0.999419, -0.0339938, -0.00265269, -4.0647e-09, 0.0777981, -0.99697, 0.0340972, 0.996391, 0.0777528, 2.38194, 2.54582, 2.34535)
 shape = SubResource("CapsuleShape3D_q4nko")
+disabled = true

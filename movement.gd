@@ -13,6 +13,7 @@ const JUMP_VELOCITY = 7.5
 const FALL_SPEED = 0.2
 
 var sprinting = false
+var tilted = false
 var sprint_multiplier = 2.0
 
 var current_speed = SPEED
@@ -32,6 +33,19 @@ var MOUSE_SENSITIVITY = 0.001
 var MAX_LOOK_UP = deg_to_rad(60)  # Adjust for desired maximum look-up angle
 var MAX_LOOK_DOWN = deg_to_rad(-60)  # Adjust for desired maximum look-down angle
 
+
+# footstep soundfx
+
+
+# 6 snow footsteps sound effects 
+var snowfootstep1 = preload("res://snowstep1.wav")
+var snowfootstep2 = preload("res://snowstep2.wav")
+var snowfootstep3 = preload("res://snowstep3.wav")
+var snowfootstep4 = preload("res://snowstep4.wav")
+var snowfootstep5 = preload("res://snowstep5.wav")
+var snowfootstep6 = preload("res://snowstep6.wav")
+
+var snowfootsteps = [snowfootstep1, snowfootstep2, snowfootstep3, snowfootstep4, snowfootstep5, snowfootstep6]
 
 # function to clear interact text
 func clear_interact_text():
@@ -59,8 +73,11 @@ func disable_fuzz():
 @onready var prev_step = null
 @onready var was_up = false
 @onready var collision = self.get_child(1)
+@onready var title = $"Neck/Camera3D/CanvasLayer/title"
 @onready var intereract_text = "cheese"
-
+@onready var spud = $"Neck/Camera3D/spud"
+@onready var tutorial = $Neck/Camera3D/CanvasLayer/tutorial
+@onready var tutorial_seen = false
 
 
 # npc interaction variables
@@ -69,6 +86,51 @@ func disable_fuzz():
 @onready var dialogue_text := dialoguebox.get_child(1)
 @onready var speaking := false # for detecting if player is in a conversation 
 @onready var last_speaker = null # tracks the last npc that spoke to player
+
+#head tilt variables (all onready)
+@onready var is_tilting = false
+@onready var tilt_duration = 2.0
+@onready var tilt_elapsed = 0.0
+@onready var start_tilt_rot_x = 0.0
+
+# function to tilt head
+func tilt_head(duration = 2.0):
+	tilt_duration = duration
+	tilt_elapsed = 0.0
+	start_tilt_rot_x = camera.rotation.x
+	is_tilting = true
+
+
+# toggle tutorial visibility
+func toggle_tutorial():
+	if tutorial.visible:
+		tutorial.visible = false
+	elif !tutorial_seen:
+		tutorial.visible = true
+		tutorial_seen = true
+
+
+
+func glitch():
+	localsound.stream = preload("res://error.mp3")
+	localsound.play()
+	spud.play("popup")
+	await get_tree().create_timer(3.0).timeout
+
+#toggle if tutorial is visible
+
+
+
+
+
+
+# look up at start of game
+func looking_up():
+	camera.rotation.x = MAX_LOOK_UP - 0.05
+	print("looking up")
+
+func hide_title():
+	title.set("visible",false)
 
 
 # npc functions
@@ -145,9 +207,14 @@ func _ready():
 	# set dialogue box initially invisible
 	dialoguebox.visible = false
 
+	tutorial.visible = false
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		toggle_tutorial()
+		if !tutorial_seen:
+			tutorial_seen = true
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -191,19 +258,29 @@ func fade_from_black():
 
 # function to toggle cutscene (stops player movement)	
 func toggle_cutscene(action = null):
+	print("cutscene toggle")
 	if cutscening:
 		# stop the cutscene and set the camera back to player pov
 		cutscening = false
 		camera.current = true
-		print("now not cutscening (switched off)")
 	elif not cutscening:
 		# start the cutscene and clear interaction text
 		cutscening = true
 		view_label.text = ""
-		print("now cutscening: " + action)
 		
 func _physics_process(delta):
-	
+
+
+	#head tilt logic
+	if is_tilting:
+		tilt_elapsed += delta
+		var t = clamp(tilt_elapsed / tilt_duration, 0.0, 1.0)
+		var eased_t = t * t * (3 - 2 * t) #smoothstep
+		camera.rotation.x = lerp(start_tilt_rot_x, 0.0, eased_t)
+		if t >= 1.0:
+			is_tilting = false
+
+
 	# do not move player around during cutscene
 	if cutscening:
 		# Add the gravity.
@@ -248,6 +325,13 @@ func _physics_process(delta):
 		was_up = true
 	if was_up and is_on_floor():
 		was_up = false
+		
+		# stream footstep sound effect
+		if surface_type == "snow":
+			localsound.stream = snowfootsteps.pick_random()
+			pass
+
+
 		'''
 		if surface_type == "hardwood":
 		#	localsound.stream = [footstep2, footstep5].pick_random()
@@ -262,7 +346,7 @@ func _physics_process(delta):
 			#localsound.stream = [cemfootstep6, cemfootstep5, cemfootstep2, cemfootstep7].pick_random()
 			pass	
 		'''
-		#localsound.play()
+		localsound.play()
 		
 		
 	#handle footsteps raycasting
@@ -332,8 +416,36 @@ func _physics_process(delta):
 	#check moving
 	var is_moving = direction and is_on_floor()
 	if is_moving:
-		pass			
-				
+		if !localsound.is_playing() and is_on_floor():
+			if surface_type == "snow":
+				footstep_noise = snowfootsteps.pick_random()
+				while footstep_noise == prev_step:
+					footstep_noise = snowfootsteps.pick_random()
+
+			else:
+				footstep_noise = null
+			
+
+			prev_step = footstep_noise
+			localsound.stream = footstep_noise
+			localsound.play()
+
+
+
+
 				
 
 	move_and_slide()
+
+
+func _on_enter_button_pressed() -> void:
+	MusicManager.play_music("fema")
+	visualFX.play("start")
+	#wait 3 seconds then tilt head
+	await get_tree().create_timer(7.0).timeout
+	tilt_head(3.0)
+	#wait 3 seconds then turn off cutscenining
+	await get_tree().create_timer(3.0).timeout
+	toggle_cutscene()
+	# show tutorial
+	toggle_tutorial()

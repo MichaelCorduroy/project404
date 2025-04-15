@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://duxm0xto21i5i"]
+
+[ext_resource type="Texture2D" uid="uid://dyq7dykeavsh3" path="res://404.png" id="1_uwfi4"]
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(558, 233)
+scale = Vector2(0.7589, 0.7589)
+texture = ExtResource("1_uwfi4")

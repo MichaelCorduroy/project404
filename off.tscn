@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1whbqsycwph0"]
+
+[ext_resource type="VideoStream" path="res://vid/vid1.ogv" id="1_13xb6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j0rq7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_crvsd"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_578a6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_crvsd")
+
+[node name="s_switch" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_j0rq7")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_578a6")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.5)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport/SubViewportContainer"]
+layout_mode = 2
+stream = ExtResource("1_13xb6")
+autoplay = true
+loop = true

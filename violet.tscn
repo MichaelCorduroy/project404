@@ -174,6 +174,57 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3c24j")
 
+[sub_resource type="Animation" id="Animation_qobv1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.51046e-08, -3.14159, 2.0721)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.841625)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Circle_002:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0187921, 1.60572, 2.26001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Circle_003:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0183616, -1.53564, -0.869297)]
+}
+
 [sub_resource type="Animation" id="Animation_q5ioy"]
 resource_name = "open"
 length = 2.5
@@ -226,57 +277,6 @@ tracks/3/keys = {
 "values": [Vector3(0.0183616, -1.53564, -0.869297), Vector3(4.24239e-09, -1.53114, -0.388136)]
 }
 
-[sub_resource type="Animation" id="Animation_qobv1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Circle_001:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0666667),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(9.51046e-08, -3.14159, 2.0721)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Circle:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -0.841625)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Circle_002:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0187921, 1.60572, 2.26001)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Circle_003:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0183616, -1.53564, -0.869297)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d4ttk"]
 _data = {
 "RESET": SubResource("Animation_qobv1"),
@@ -300,17 +300,17 @@ mesh = SubResource("ArrayMesh_4h12w")
 skeleton = NodePath("")
 
 [node name="Circle_001" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.269882, -0.492492, 8.4798e-08, -0.492492, 0.269882, 5.341e-08, 8.75894e-08, 4.86972e-08, 0.561592, 0.456971, 1.14917, -0.0986961)
+transform = Transform3D(-0.269883, -0.492491, 1.42374e-06, -0.492491, 0.269883, 5.341e-08, 7.31041e-07, 1.22289e-06, 0.561592, 0.456971, 1.14917, -0.0986961)
 mesh = SubResource("ArrayMesh_6xsrq")
 skeleton = NodePath("")
 
 [node name="Circle_002" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0269501, -0.0110192, -0.733789, -0.566643, 0.466926, 0.0137995, -0.466352, -0.566704, 0.025638, -0.0248579, 1.14917, 0.553474)
+transform = Transform3D(-0.0269495, -0.0110187, -0.733789, -0.566645, 0.466924, 0.0137995, -0.46635, -0.566706, 0.0256371, -0.0248579, 1.14917, 0.553474)
 mesh = SubResource("ArrayMesh_8xxou")
 skeleton = NodePath("")
 
 [node name="Circle_003" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.02695, 0.0110192, -0.733789, -0.56087, 0.473853, -0.0134834, 0.473279, 0.560924, 0.0258055, -0.0777119, 1.14917, -0.778579)
+transform = Transform3D(0.0269516, 0.0110211, -0.733789, -0.56087, 0.473853, -0.0134834, 0.473279, 0.560924, 0.025808, -0.0777119, 1.14917, -0.778579)
 mesh = SubResource("ArrayMesh_t8qdl")
 skeleton = NodePath("")
 
@@ -322,6 +322,7 @@ libraries = {
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.37961)
 shape = SubResource("SphereShape3D_m8fir")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

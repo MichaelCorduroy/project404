@@ -1,0 +1,862 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkfqtfrjrb7iw"]
+
+[ext_resource type="Texture2D" uid="uid://doyv3d7coleb2" path="res://addons/kenney_particle_pack/smoke_07.png" id="1_o4hdq"]
+[ext_resource type="PackedScene" uid="uid://bc2g7q8u5addo" path="res://treefab.tscn" id="2_5cebm"]
+[ext_resource type="PackedScene" uid="uid://b0mnjvrl17xi0" path="res://evergreen_1.tscn" id="3_njoku"]
+[ext_resource type="PackedScene" uid="uid://2frqonbkqvmb" path="res://bush.tscn" id="4_rvn3y"]
+[ext_resource type="PackedScene" uid="uid://b5rjehx4uomsk" path="res://tubeportal.tscn" id="5_k0gqc"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oam51"]
+emission_shape_scale = Vector3(100, 100, 100)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5oce5"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_o4hdq")
+emission_enabled = true
+emission = Color(0.712129, 0.712129, 0.712129, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_n1ros"]
+material = SubResource("StandardMaterial3D_5oce5")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="snow" type="Node3D" parent="."]
+
+[node name="GPUParticles3D18" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4878, 31.7807, 148.706)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D25" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.8443, 31.7807, 7.0049)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D28" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.8071, 31.7807, 102.362)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D31" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.8071, 31.7807, -17.2303)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D32" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.8071, 31.7807, 48.8611)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D26" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1567, 31.7807, -54.7638)
+amount = 3000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D27" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8389, 31.7807, 104.564)
+amount = 3000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D29" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.6453, 28.5328, -80.1066)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="GPUParticles3D30" type="GPUParticles3D" parent="snow"]
+transform = Transform3D(0.999992, 0.00411897, 0, -0.00411897, 0.999992, 0, 0, 0, 1, -53.05, 28.5328, 143.528)
+amount = 1000
+lifetime = 20.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_oam51")
+draw_pass_1 = SubResource("QuadMesh_n1ros")
+
+[node name="foliage" type="Node3D" parent="."]
+
+[node name="treefab" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 21.9406, -21.0854, 85.6197)
+
+[node name="treefab2" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 21.9406, -21.0854, 106.264)
+
+[node name="treefab10" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 72.9292, -22.9783, 110.516)
+
+[node name="treefab11" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 54.3507, -22.9783, 126.769)
+
+[node name="treefab38" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 39.2513, -17.4796, 125.925)
+
+[node name="treefab41" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.330267, 0, -0.728645, 0, 0.8, 0, 0.728645, 0, 0.330267, 25.3941, -20.5519, 123.517)
+
+[node name="treefab39" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 64.6467, -9.87724, 137.006)
+
+[node name="treefab40" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 67.8597, -21.6091, 124.731)
+
+[node name="treefab46" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, 14.9354, -22.9783, 109.094)
+
+[node name="treefab63" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 44.2842, -2.27981, 147.092)
+
+[node name="treefab64" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, 37.279, -4.17267, 149.922)
+
+[node name="treefab65" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.672529, 0, -0.433249, 0, 0.8, 0, 0.433249, 0, 0.672529, 14.3502, -12.5136, 135.031)
+
+[node name="treefab66" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.731205, 0, -0.32456, 0, 0.8, 0, 0.32456, 0, -0.731205, 10.3693, -14.4064, 128.61)
+
+[node name="treefab47" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, 11.5396, -22.9783, 84.6435)
+
+[node name="treefab48" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, 5.83155, -21.6091, 97.0559)
+
+[node name="treefab49" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.150912, 0.0424962, -0.784487, 0.00802783, 0.79887, 0.0417311, 0.785596, 0, -0.151126, -1.37018, -22.3431, 89.2899)
+
+[node name="treefab50" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.151126, 0, -0.785596, 0, 0.8, 0, 0.785596, 0, -0.151126, 5.85956, -22.9783, 65.6987)
+
+[node name="treefab51" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.151126, 0, -0.785596, 0, 0.8, 0, 0.785596, 0, -0.151126, -4.56351, -21.6091, 74.5309)
+
+[node name="treefab52" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.584664, 0, -0.546048, 0, 0.8, 0, 0.546048, 0, -0.584664, 88.5963, -22.9783, 74.7265)
+
+[node name="treefab53" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.584664, 0, -0.546048, 0, 0.8, 0, 0.546048, 0, -0.584664, 108.359, -22.9783, 59.9351)
+
+[node name="treefab54" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.584664, 0, -0.546048, 0, 0.8, 0, 0.546048, 0, -0.584664, 94.734, -21.6091, 60.938)
+
+[node name="treefab55" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 85.6071, -22.9783, 119.809)
+
+[node name="treefab56" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 105.499, -22.9783, 134.426)
+
+[node name="treefab57" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 100.584, -21.6091, 121.679)
+
+[node name="treefab58" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 85.6071, -6.08688, 141.516)
+
+[node name="treefab61" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 8.88178e-17, 0.400955, -0.0245965, 0.798493, -0.042467, -0.4002, -0.0490757, -0.690964, 85.6071, -8.40496, 134.914)
+
+[node name="treefab62" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 76.1631, -14.6562, 129.9)
+
+[node name="treefab131" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 77.2183, -27.0896, 47.671)
+
+[node name="treefab132" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 80.4522, -18.7675, 67.0557)
+
+[node name="treefab59" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 105.499, -6.08688, 156.133)
+
+[node name="treefab60" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.692268, 0, 0.400955, 0, 0.8, 0, -0.400955, 0, -0.692268, 100.584, -4.7177, 143.386)
+
+[node name="treefab12" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 23.9963, -22.0672, 117.501)
+
+[node name="treefab13" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 23.9963, -2.03933, 148.409)
+
+[node name="treefab14" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 55.2649, -2.03933, 148.409)
+
+[node name="treefab16" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.540603, 0.0424962, 0.588169, -0.0287576, 0.798871, -0.0312879, -0.589, 0, 0.541367, 22.4908, -24.3672, 75.0205)
+
+[node name="treefab17" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, 22.5277, -23.732, 96.5108)
+
+[node name="treefab67" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799188, 0, -0.0360254, 0, 0.8, 0, 0.0360254, 0, 0.799188, 102.066, -21.5429, -22.6425)
+
+[node name="treefab68" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.160274, 0, -0.783781, 0, 0.8, 0, 0.783781, 0, 0.160274, 91.7192, -23.4358, -24.0861)
+
+[node name="treefab69" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.567342, 0, 0.564024, 0, 0.8, 0, -0.564024, 0, 0.567342, 103.13, -24.1895, -33.2045)
+
+[node name="treefab133" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.567342, 0, 0.564024, 0, 0.8, 0, -0.564024, 0, 0.567342, 110.903, -15.0074, -41.1253)
+
+[node name="treefab134" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.567342, 0, 0.564024, 0, 0.8, 0, -0.564024, 0, 0.567342, 107.863, -15.0074, -46.2266)
+
+[node name="treefab135" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.567342, 0, 0.564024, 0, 0.8, 0, -0.564024, 0, 0.567342, 109.56, -15.0074, -30.0785)
+
+[node name="treefab136" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.567342, 0, 0.564024, 0, 0.8, 0, -0.564024, 0, 0.567342, 109.584, -14.8472, 23.7092)
+
+[node name="treefab70" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.565359, -0.066817, 0.562054, 0.0473851, 0.797205, 0.047108, -0.564024, 0, 0.567342, 102.162, -24.1895, -11.736)
+
+[node name="treefab71" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.514123, 0, -0.612925, 0, 0.8, 0, 0.612925, 0, 0.514123, 101.12, -21.5429, 4.68901)
+
+[node name="treefab72" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.468781, 0, -0.648262, 0, 0.8, 0, 0.648262, 0, -0.468781, 95.1841, -23.4358, -3.90714)
+
+[node name="treefab73" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799178, 0, -0.0362485, 0, 0.8, 0, 0.0362485, 0, 0.799178, 109.618, -24.1895, -1.67276)
+
+[node name="treefab74" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799178, 0, -0.0362485, 0, 0.8, 0, 0.0362485, 0, 0.799178, 93.1534, -24.1895, 12.138)
+
+[node name="treefab18" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, 0, 0.799423, 0, 0.8, 0, -0.799423, 0, -0.0303893, 76.6763, -23.732, 123.948)
+
+[node name="treefab19" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, -1.11022e-17, 0.799423, -0.0490403, 0.798493, -0.00186422, -0.797917, -0.0490757, -0.0303321, 82.6126, -24.5799, 107.768)
+
+[node name="treefab15" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.999509, 0.0313235, 0, -0.0313235, 0.999509, 0, 0, 0, 1, 24.3658, -21.0112, 0)
+
+[node name="treefab3" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.589067, 0, -0.541295, 0, 0.8, 0, 0.541295, 0, 0.589067, 21.9406, -21.0854, 61.155)
+
+[node name="treefab4" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.589067, 0, -0.541295, 0, 0.8, 0, 0.541295, 0, 0.589067, 87.39, -21.0854, 61.155)
+
+[node name="treefab5" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.585966, -0.0819702, -0.538446, 0.0574561, 0.795778, -0.0586181, 0.541611, 0.00426395, 0.588761, 77.7936, -21.0854, 78.8924)
+
+[node name="treefab6" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 77.7936, -21.0854, 94.1229)
+
+[node name="treefab7" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 89.9818, -21.0854, 94.1229)
+
+[node name="treefab20" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, 0, 0.799423, 0, 0.8, 0, -0.799423, 0, -0.0303893, 26.4713, -24.631, 70.5945)
+
+[node name="treefab21" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 27.5886, -21.9845, 40.7695)
+
+[node name="treefab44" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 11.2726, -21.9845, 40.7695)
+
+[node name="treefab45" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 26.0356, -19.9371, 29.1033)
+
+[node name="treefab22" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 39.7768, -21.9845, 40.7695)
+
+[node name="treefab23" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, 0, 0.799423, 0, 0.8, 0, -0.799423, 0, -0.0303893, 88.7004, -23.1018, 35.8683)
+
+[node name="treefab24" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.27609, 0.0250588, 0.750431, -0.00865236, 0.799607, -0.0235177, -0.750799, 0, 0.276225, 89.8229, -23.2662, 6.09931)
+
+[node name="treefab25" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 102.023, -21.9845, 6.09931)
+
+[node name="treefab26" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, 0, 0.799423, 0, 0.8, 0, -0.799423, 0, -0.0303893, -4.21263, -24.631, 142.415)
+
+[node name="treefab27" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, -3.09535, -21.9845, 112.59)
+
+[node name="treefab28" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 9.0929, -21.9845, 112.59)
+
+[node name="treefab29" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.627007, 0, 0.496853, 0, 0.8, 0, -0.496853, 0, -0.627007, 12.5715, -24.631, 92.1729)
+
+[node name="treefab75" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.694254, 0, 0.397506, 0, 0.8, 0, -0.397506, 0, 0.694254, 30.3409, -22.107, -57.1774)
+
+[node name="treefab76" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.177144, 0, 0.780141, 0, 0.8, 0, -0.780141, 0, 0.177144, 40.5986, -22.107, -39.2621)
+
+[node name="treefab77" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.555043, 0, -0.576131, 0, 0.8, 0, 0.576131, 0, 0.555043, 35.9255, -23.9999, -33.3252)
+
+[node name="treefab78" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.555043, 0, -0.576131, 0, 0.8, 0, 0.576131, 0, 0.555043, 20.8296, -23.9999, -52.8564)
+
+[node name="treefab79" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.555043, 0, -0.576131, 0, 0.8, 0, 0.576131, 0, 0.555043, 22.0436, -22.6307, -39.2485)
+
+[node name="treefab80" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.2592, 0, -0.756846, 0, 0.8, 0, 0.756846, 0, 0.2592, 11.903, -23.9999, -42.3911)
+
+[node name="treefab81" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.2592, 0, -0.756846, 0, 0.8, 0, 0.756846, 0, 0.2592, 6.48705, -23.9999, -60.4709)
+
+[node name="treefab137" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.2592, 0, -0.756846, 0, 0.8, 0, 0.756846, 0, 0.2592, 21.1202, -23.9999, -61.8156)
+
+[node name="treefab138" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.2592, 0, -0.756846, 0, 0.8, 0, 0.756846, 0, 0.2592, -9.13065, -23.9689, -58.4619)
+
+[node name="treefab82" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.2592, 0, -0.756846, 0, 0.8, 0, 0.756846, 0, 0.2592, 3.62373, -22.6307, -53.6309)
+
+[node name="treefab114" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.21087, 0, 0.771708, -0.0696468, 0.796735, 0.019031, -0.768559, -0.0722001, 0.210009, -19.971, -23.3907, -54.585)
+
+[node name="treefab115" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.79984, 0, -0.0159862, 0.00144276, 0.796735, 0.0721857, 0.0159209, -0.0722001, 0.796576, -13.1854, -22.2378, -36.0597)
+
+[node name="treefab116" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.717979, 0, -0.352854, 0.0318451, 0.796735, 0.0647978, 0.351414, -0.0722001, 0.715049, -38.1372, -23.8711, -38.913)
+
+[node name="treefab139" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.718606, 0.0471127, -0.348405, -0.0106662, 0.795341, 0.0855494, 0.351414, -0.0722001, 0.715049, -54.9383, -13.1011, -84.6624)
+
+[node name="treefab140" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.718606, 0.0471127, -0.348405, -0.0424049, 0.798611, 0.0205287, 0.349009, 2.75224e-05, 0.719856, -46.683, -20.0192, -79.9207)
+
+[node name="treefab141" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.718606, 0.0471127, -0.348405, -0.0424049, 0.798611, 0.0205287, 0.349009, 2.75224e-05, 0.719856, -35.8833, -24.6088, -76.0914)
+
+[node name="treefab117" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.717979, 0, -0.352854, -0.07376, 0.782326, -0.150085, 0.345058, 0.167231, 0.702117, -63.4952, -16.13, -72.2073)
+
+[node name="treefab118" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.21087, 0, 0.771708, -0.0696468, 0.796735, 0.019031, -0.768559, -0.0722001, 0.210009, -13.2837, -23.3907, -130.564)
+
+[node name="treefab119" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.79984, 0, -0.0159862, 0.00144276, 0.796735, 0.0721857, 0.0159209, -0.0722001, 0.796576, -6.49803, -22.2378, -112.039)
+
+[node name="treefab120" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.717979, 0, -0.352854, 0.0318451, 0.796735, 0.0647978, 0.351414, -0.0722001, 0.715049, -31.4498, -23.8711, -114.892)
+
+[node name="treefab121" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.717979, 0, -0.352854, 0.0318451, 0.796735, 0.0647978, 0.351414, -0.0722001, 0.715049, -30.9664, -21.8686, -107.966)
+
+[node name="treefab83" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.177144, 0, 0.780141, 0, 0.8, 0, -0.780141, 0, 0.177144, 36.262, -24.7536, -48.0176)
+
+[node name="treefab84" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.133281, 0.0250588, 0.788421, 0.00417687, 0.799607, -0.0247083, -0.788808, 0, -0.133346, 32.5771, -22.4942, -27.3882)
+
+[node name="treefab85" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.791005, 0, 0.119628, 0, 0.8, 0, -0.119628, 0, -0.791005, 25.4664, -25.6526, -46.835)
+
+[node name="treefab86" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.379025, 0, -0.704514, 0, 0.8, 0, 0.704514, 0, -0.379025, 11.6535, -22.107, 0.631153)
+
+[node name="treefab87" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.26221, 0, -0.755808, 0, 0.8, 0, 0.755808, 0, 0.26221, -6.52657, -22.107, -9.14962)
+
+[node name="treefab88" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.775755, 0, 0.195461, 0, 0.8, 0, -0.195461, 0, -0.775755, -5.69994, -23.9999, -16.6596)
+
+[node name="treefab89" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.775755, 0, 0.195461, 0, 0.8, 0, -0.195461, 0, -0.775755, 17.4409, -23.9999, -8.066)
+
+[node name="treefab90" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.775755, 0, 0.195461, 0, 0.8, 0, -0.195461, 0, -0.775755, 9.21445, -22.6307, -18.9735)
+
+[node name="treefab91" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.620229, 0, 0.505288, 0, 0.8, 0, -0.505288, 0, -0.620229, 19.483, -23.9999, -21.6688)
+
+[node name="treefab92" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.620229, 0, 0.505288, 0, 0.8, 0, -0.505288, 0, -0.620229, 36.8156, -23.9999, -4.09237)
+
+[node name="treefab93" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.620229, 0, 0.505288, 0, 0.8, 0, -0.505288, 0, -0.620229, 33.9759, -22.6307, -17.4559)
+
+[node name="treefab94" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.26221, 0, -0.755808, 0, 0.8, 0, 0.755808, 0, 0.26221, 1.78414, -24.7536, -4.01185)
+
+[node name="treefab95" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.530316, 0, -0.59897, 0, 0.8, 0, 0.59897, 0, 0.530316, -6.0108, -23.0061, -23.4612)
+
+[node name="treefab96" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.734613, 0, 0.31677, 0, 0.8, 0, -0.31677, 0, 0.734613, 10.3214, -25.6526, -10.7245)
+
+[node name="treefab30" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.390653, 0, 0.698133, 0, 0.8, 0, -0.698133, 0, -0.390653, -9.35686, -21.9845, 71.9263)
+
+[node name="treefab31" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.390653, 0, 0.698133, 0, 0.8, 0, -0.698133, 0, -0.390653, -1.42974, -21.9845, 62.6681)
+
+[node name="treefab42" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 108.974, -21.0854, -13.6618)
+
+[node name="treefab122" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.0223512, 0, 0.799688, 0, 0.8, 0, -0.799688, 0, 0.0223512, -11.5317, -24.1895, -89.1632)
+
+[node name="treefab123" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0139061, 0, 0.799879, 0, 0.8, 0, -0.799879, 0, -0.0139061, -23.5078, -21.0854, -88.3102)
+
+[node name="treefab124" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.600799, 0, -0.528243, 0, 0.8, 0, 0.528243, 0, -0.600799, 18.3265, -24.1895, -97.6665)
+
+[node name="treefab125" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.576247, 0, -0.554923, 0, 0.8, 0, 0.554923, 0, -0.576247, 27.1072, -21.0854, -89.4779)
+
+[node name="treefab126" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.152236, 0, -0.785381, 0, 0.8, 0, 0.785381, 0, 0.152236, -3.14962, -25.675, -90.0687)
+
+[node name="treefab127" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.187666, 0, -0.777677, 0, 0.8, 0, 0.777677, 0, 0.187666, 8.35368, -22.5709, -93.5078)
+
+[node name="treefab97" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.0225746, 0, 0.799681, 0, 0.8, 0, -0.799681, 0, 0.0225746, 43.9497, -21.5429, -87.7702)
+
+[node name="treefab98" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.573489, 0, 0.557772, 0, 0.8, 0, -0.557772, 0, -0.573489, 54.8531, -24.1895, -88.0498)
+
+[node name="treefab99" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.604189, 0, 0.524362, 0, 0.8, 0, -0.524362, 0, 0.604189, 71.2933, -21.5429, -87.2849)
+
+[node name="treefab100" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.656058, 0, -0.457808, 0, 0.8, 0, 0.457808, 0, 0.656058, 62.7983, -23.4358, -81.2047)
+
+[node name="treefab101" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.0227979, 0, 0.799675, 0, 0.8, 0, -0.799675, 0, 0.0227979, 64.7895, -24.1895, -95.6746)
+
+[node name="treefab102" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.0227979, 0, 0.799675, 0, 0.8, 0, -0.799675, 0, 0.0227979, 78.8753, -24.1895, -79.4443)
+
+[node name="treefab103" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.75534, 0, 0.263555, 0, 0.8, 0, -0.263555, 0, -0.75534, 72.8933, -21.9845, -76.0242)
+
+[node name="treefab104" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.75534, 0, 0.263555, 0, 0.8, 0, -0.263555, 0, -0.75534, 72.6882, -21.9845, -88.2107)
+
+[node name="treefab105" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0134594, 0, 0.799887, 0, 0.8, 0, -0.799887, 0, -0.0134594, 52.8129, -21.0854, -94.8282)
+
+[node name="treefab43" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.390653, 0, 0.698133, 0, 0.8, 0, -0.698133, 0, -0.390653, 85.6033, -21.9845, -36.6134)
+
+[node name="treefab32" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799999, 0, 0.000921458, 0, 0.8, 0, -0.000921458, 0, 0.799999, 15.1752, -24.631, 11.3442)
+
+[node name="treefab33" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.740115, 0, -0.303694, 0, 0.8, 0, 0.303694, 0, 0.740115, 44.9387, -21.9845, 13.5594)
+
+[node name="treefab34" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.740115, 0, -0.303694, 0, 0.8, 0, 0.303694, 0, 0.740115, 44.4898, -21.9845, 25.7393)
+
+[node name="treefab35" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799999, 0, 0.000921458, 0, 0.8, 0, -0.000921458, 0, 0.799999, 15.1752, -15.8331, -119.633)
+
+[node name="treefab110" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799999, 0, 0.000921458, 0, 0.8, 0, -0.000921458, 0, 0.799999, 27.9859, -11.1441, -119.633)
+
+[node name="treefab111" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.792653, -0.108171, 0.000912996, 0.108171, 0.792653, 0.000124594, -0.000921458, 0, 0.799999, 65.2075, -11.1441, -119.633)
+
+[node name="treefab112" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799914, 0.0117003, 0.00092136, -0.0117003, 0.799915, -1.34766e-05, -0.000921458, 0, 0.8, 35.4361, -11.1441, -119.633)
+
+[node name="treefab113" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.799175, -0.0363183, 0.000920508, 0.0363183, 0.799175, 4.18322e-05, -0.000921458, -1.36209e-12, 0.8, 48.0725, -11.1441, -119.633)
+
+[node name="treefab36" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.740115, 0, -0.303694, 0, 0.8, 0, 0.303694, 0, 0.740115, 44.9387, -13.1866, -117.418)
+
+[node name="treefab37" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.740115, 0, -0.303694, 0, 0.8, 0, 0.303694, 0, 0.740115, 44.4898, -13.1866, -105.238)
+
+[node name="treefab8" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 42.5683, -21.0854, 55.6834)
+
+[node name="treefab106" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.540016, -0.0564877, 0.58753, 0.0382257, 0.798003, 0.0415891, -0.589, 0, 0.541367, 10.3405, -19.1548, 44.9266)
+
+[node name="treefab107" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303135, -0.0564877, 0.797427, -0.00214578, 0.798003, 0.0564469, -0.799423, 0, -0.0303893, 14.3377, -19.7731, 40.5006)
+
+[node name="treefab108" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.389678, -0.0564876, 0.696391, -0.0275839, 0.798003, 0.0492949, -0.698133, 0, -0.390653, -13.6806, -19.1033, 32.5742)
+
+[node name="treefab109" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.275536, -0.0564877, 0.748925, 0.0195042, 0.798003, 0.0530136, -0.750799, 0, 0.276225, 30.1442, -15.0998, 25.5895)
+
+[node name="treefab9" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 94.6288, -13.5856, 110.216)
+
+[node name="treefab175" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.751754, 0, 0.273616, 0, 0.8, 0, -0.273616, 0, -0.751754, 116.786, -22.9783, 118.768)
+
+[node name="treefab176" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.725043, -0.0453115, -0.335052, -0.0490403, 0.798493, -0.00186422, 0.334527, 0.0188493, -0.726455, 110.53, -24.5799, 110.883)
+
+[node name="treefab177" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.799305, 0, -0.0333331, 0, 0.8, 0, 0.0333331, 0, -0.799305, 108.175, -13.5856, 98.848)
+
+[node name="evergreen1" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 117.839, -4.29296, 90.0326)
+
+[node name="evergreen25" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 4.48124, -10.0856, 151.425)
+
+[node name="evergreen59" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 27.1533, -10.0856, 151.425)
+
+[node name="evergreen60" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 41.8065, -10.0856, 151.425)
+
+[node name="evergreen26" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 59.0726, -5.05007, 161.097)
+
+[node name="evergreen27" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 69.4638, -5.05007, 161.097)
+
+[node name="evergreen28" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 91.2364, -5.05007, 161.097)
+
+[node name="evergreen29" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 110.972, -4.61406, 145.18)
+
+[node name="evergreen49" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.049551, -0.00668547, 0, 0.00665514, 0.0493262, 0.00475754, -0.000636128, -0.00471482, 0.0497731, 118.26, -18.368, 121.502)
+
+[node name="evergreen50" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0498246, -0.00418476, 0, 0.00418476, 0.0498246, 0, 0, 0, 0.05, 118.26, -16.5797, 135.14)
+
+[node name="evergreen12" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 117.839, -4.29296, 53.5498)
+
+[node name="evergreen51" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.0473959, -0.0159256, 0, 0.0159256, 0.0473959, 126.626, 0.0261679, -16.6913)
+
+[node name="evergreen52" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.0494793, -0.00719708, 0, 0.00719708, 0.0494793, 126.626, -5.56064, -5.54182)
+
+[node name="evergreen53" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.0499839, -0.00126872, 0, 0.00126872, 0.0499839, 141.157, -22.1278, 6.99717)
+
+[node name="evergreen54" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.0497978, 0.00449252, 0, -0.00449252, 0.0497978, 132.715, -8.36645, 37.1136)
+
+[node name="evergreen55" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.0499714, -0.00169003, 0, 0.00169003, 0.0499714, 132.715, -18.9584, 22.0848)
+
+[node name="evergreen13" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 117.839, -4.29296, 67.4722)
+
+[node name="evergreen14" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 117.839, -4.29296, 81.4357)
+
+[node name="evergreen15" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 98.9307, -10.7813, 88.3072)
+
+[node name="evergreen16" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 96.5584, -16.0835, 49.7854)
+
+[node name="evergreen2" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -22.612, -13.0211, 90.0326)
+
+[node name="evergreen57" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -22.612, -13.0211, 70.2812)
+
+[node name="evergreen3" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -41.2154, -14.0858, 98.5586)
+
+[node name="evergreen4" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.1625, -15.7582, 106.866)
+
+[node name="evergreen5" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -10.1014, -11.9018, 25.437)
+
+[node name="evergreen61" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 27.4101, -11.9018, 25.437)
+
+[node name="evergreen62" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.81626, -12.8046, 36.5568)
+
+[node name="evergreen63" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -5.94269, -12.8046, 54.3078)
+
+[node name="evergreen64" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0491009, 0.00943934, 0, -0.00943934, 0.0491009, 0, 0, 0, 0.05, -9.92942, -14.8265, 73.9382)
+
+[node name="evergreen6" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -10.1014, -11.9018, 10.7763)
+
+[node name="evergreen7" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.746502, -11.9018, -0.73378)
+
+[node name="evergreen8" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -23.2991, -11.9018, -0.73378)
+
+[node name="evergreen36" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 8.52017, -14.2837, -35.488)
+
+[node name="evergreen30" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -112.055, -15.5693, 10.7763)
+
+[node name="evergreen40" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -93.7834, -15.5693, 18.3272)
+
+[node name="evergreen31" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -125.253, -15.5693, -0.73378)
+
+[node name="evergreen42" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -125.253, -15.5693, -18.5995)
+
+[node name="evergreen41" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -125.253, -15.5693, -32.2596)
+
+[node name="evergreen32" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0379181, 0, -0.0325917, -0.00324945, 0.0497509, -0.0037805, 0.0324293, 0.00498509, 0.0377292, -117.401, -16.4333, -59.6499)
+
+[node name="evergreen33" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0379181, 0, -0.0325917, -0.00324945, 0.0497509, -0.0037805, 0.0324293, 0.00498509, 0.0377292, -119.907, -14.7054, -76.8951)
+
+[node name="evergreen56" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0379181, 0, -0.0325917, -0.00324945, 0.0497509, -0.0037805, 0.0324293, 0.00498509, 0.0377292, -16.6507, -14.7054, -106.923)
+
+[node name="evergreen34" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0466784, 0.00436939, 0.0173791, -0.00324945, 0.0497509, -0.0037805, -0.0176229, 0.00239991, 0.0467298, -37.6454, -16.4333, 38.7742)
+
+[node name="evergreen35" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0466784, 0.00436939, 0.0173791, -0.00324945, 0.0497509, -0.0037805, -0.0176229, 0.00239991, 0.0467298, -53.9671, -14.7054, 32.6686)
+
+[node name="evergreen43" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0466784, 0.00436939, 0.0173791, -0.00324945, 0.0497509, -0.0037805, -0.0176229, 0.00239991, 0.0467298, -72.8214, -14.7054, 32.6686)
+
+[node name="evergreen44" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0466784, 0.00436939, 0.0173791, -0.00324945, 0.0497509, -0.0037805, -0.0176229, 0.00239991, 0.0467298, -72.8214, -14.7054, 32.6686)
+
+[node name="evergreen23" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -81.0162, -11.9018, -65.8644)
+
+[node name="evergreen38" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0323233, 0.0087001, 0.0371418, -0.00683951, 0.0492152, -0.00557592, -0.037529, -0.00147597, 0.033006, -86.9221, -16.2967, -45.7534)
+
+[node name="evergreen37" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.0494133, -0.00763717, 0, 0.00763717, 0.0494133, -56.9078, -11.9018, -77.9404)
+
+[node name="evergreen24" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -80.9665, -7.11174, -90.7469)
+
+[node name="evergreen20" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -53.2791, -4.65231, -103.528)
+
+[node name="evergreen21" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -43.9242, -12.6135, -129.698)
+
+[node name="evergreen22" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -66.4769, -6.22044, -129.698)
+
+[node name="evergreen9" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 131.748, 2.69678, -43.5451)
+
+[node name="evergreen58" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.0499254, 0.00273008, 0, -0.00273008, 0.0499254, 0, 0, 0, 0.05, 106.725, 4.85105, -66.8411)
+
+[node name="evergreen17" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 96.427, 1.741, -93.8187)
+
+[node name="evergreen18" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 83.83, -10.1417, -93.8187)
+
+[node name="evergreen19" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 75.1275, -22.0444, -60.1431)
+
+[node name="evergreen10" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 131.748, 2.69678, -54.6274)
+
+[node name="evergreen11" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 124.331, 2.69678, -68.7789)
+
+[node name="evergreen45" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 118.774, 2.69678, -105.332)
+
+[node name="evergreen46" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 48.1038, -7.85918, -128.145)
+
+[node name="evergreen47" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 33.3032, -7.85918, -128.145)
+
+[node name="evergreen48" parent="foliage" instance=ExtResource("3_njoku")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 14.0421, -13.001, -128.145)
+
+[node name="bush" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 33.2617, -20.7485, 71.6032)
+
+[node name="bush11" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 33.2617, -20.7485, -90.1774)
+
+[node name="bush12" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 73.3791, -20.7485, -14.0659)
+
+[node name="bush13" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -76.4107, -20.7485, -51.5349)
+
+[node name="treefab165" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -59.8147, -21.0503, 9.40183)
+
+[node name="treefab166" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, -70.2158, -22.9431, 8.42571)
+
+[node name="treefab167" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.540603, 0.0424962, 0.588169, -0.0287576, 0.798871, -0.0312879, -0.589, 0, 0.541367, -59.2646, -24.332, -1.19729)
+
+[node name="treefab168" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, 0, 0.799423, 0, 0.8, 0, -0.799423, 0, -0.0303893, -55.2841, -24.5959, -5.62333)
+
+[node name="treefab169" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.627007, 0, 0.496853, 0, 0.8, 0, -0.496853, 0, -0.627007, -69.1838, -24.5959, 15.955)
+
+[node name="bush9" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -48.4936, -20.7134, -4.61459)
+
+[node name="treefab170" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -99.4444, -10.7026, -70.2739)
+
+[node name="treefab171" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, -109.845, -12.5954, -71.2501)
+
+[node name="treefab172" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.540603, 0.0424962, 0.588169, -0.0287576, 0.798871, -0.0312879, -0.589, 0, 0.541367, -98.8942, -13.9843, -80.8731)
+
+[node name="treefab173" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.0303893, 0, 0.799423, 0, 0.8, 0, -0.799423, 0, -0.0303893, -94.9137, -14.2482, -85.2991)
+
+[node name="treefab174" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.627007, 0, 0.496853, 0, 0.8, 0, -0.496853, 0, -0.627007, -108.814, -14.2482, -63.7207)
+
+[node name="bush10" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -88.1233, -10.3656, -84.2904)
+
+[node name="bush2" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 71.9941, -20.7485, 91.8998)
+
+[node name="treefab128" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.584664, 0, -0.546048, 0, 0.8, 0, 0.546048, 0, -0.584664, 88.5963, -22.9783, 18.9978)
+
+[node name="treefab129" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.585966, -0.0819701, -0.538446, 0.0603573, 0.795789, -0.0554626, 0.541295, 0, 0.589067, 77.7936, -21.0854, 23.1636)
+
+[node name="treefab130" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.276225, 0, 0.750799, 0, 0.8, 0, -0.750799, 0, 0.276225, 77.7936, -21.0854, 38.3942)
+
+[node name="bush6" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 71.9941, -20.7485, 36.171)
+
+[node name="bush3" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 24.7772, -20.7485, 102.973)
+
+[node name="treefab142" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -96.6624, -21.0854, -40.4684)
+
+[node name="treefab143" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, -96.6624, -21.0854, -19.8243)
+
+[node name="treefab144" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.195407, 0, -0.775768, 0, 0.8, 0, 0.775768, 0, 0.195407, -103.668, -22.9783, -16.9942)
+
+[node name="treefab145" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.541367, 0, 0.589001, 0, 0.8, 0, -0.589001, 0, 0.541367, -96.0753, -23.732, -29.5773)
+
+[node name="treefab155" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.724621, 0, 0.339005, 0, 0.8, 0, -0.339005, 0, -0.724621, -83.4949, -21.9372, -5.04978)
+
+[node name="treefab156" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.680993, 0, 0.419819, 0, 0.8, 0, -0.419819, 0, 0.680993, -78.6877, -23.8301, 0.778977)
+
+[node name="treefab161" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.724621, 0, 0.339005, 0, 0.8, 0, -0.339005, 0, -0.724621, -73.2466, -21.9372, -10.8394)
+
+[node name="treefab163" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.724621, 0, 0.339005, 0, 0.8, 0, -0.339005, 0, -0.724621, -91.3698, -21.9372, -47.0668)
+
+[node name="treefab164" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.724621, 0, 0.339005, 0, 0.8, 0, -0.339005, 0, -0.724621, -81.1215, -21.9372, -52.8564)
+
+[node name="treefab162" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.680993, 0, 0.419819, 0, 0.8, 0, -0.419819, 0, 0.680993, -68.4394, -23.8301, -5.0106)
+
+[node name="treefab157" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.724621, 0, 0.339005, 0, 0.8, 0, -0.339005, 0, -0.724621, -92.9724, -24.5838, -2.67444)
+
+[node name="treefab158" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.771072, 0, 0.213185, 0, 0.8, 0, -0.213185, 0, -0.771072, -40.1199, -15.8566, -1.03544)
+
+[node name="treefab159" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.601288, 0, 0.527687, 0, 0.8, 0, -0.527687, 0, 0.601288, -34.4065, -17.7495, 3.90831)
+
+[node name="treefab160" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.771072, 0, 0.213185, 0, 0.8, 0, -0.213185, 0, -0.771072, -49.0673, -18.5031, 2.88984)
+
+[node name="treefab146" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.627007, 0, 0.496853, 0, 0.8, 0, -0.496853, 0, -0.627007, -106.031, -22.8278, -33.9152)
+
+[node name="treefab152" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.567942, 0, 0.56342, 0, 0.8, 0, -0.56342, 0, 0.567942, -40.9575, -21.0854, -40.0381)
+
+[node name="treefab153" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.030487, 0, 0.799419, 0, 0.8, 0, -0.799419, 0, -0.030487, -26.4184, -21.0854, -25.3823)
+
+[node name="treefab154" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.79505, 0, -0.0888559, 0, 0.8, 0, 0.0888559, 0, -0.79505, -42.9936, -24.631, -28.7874)
+
+[node name="bush7" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -93.8258, -20.7485, -23.1151)
+
+[node name="treefab147" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.241726, -0.161013, 0.745415, 0.0496675, 0.783629, 0.153161, -0.760987, 5.94978e-09, 0.246775, -59.1361, -21.6658, -15.7363)
+
+[node name="treefab148" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.385235, -0.161013, 0.6824, -0.0791544, 0.783629, 0.140213, -0.696656, -2.99313e-09, -0.393282, -39.9006, -17.7134, -9.36819)
+
+[node name="treefab149" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(0.78188, -0.161013, -0.05233, 0.160653, 0.783629, -0.0107523, 0.0534232, 0, 0.798214, -38.9993, -19.4606, -1.83152)
+
+[node name="treefab150" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.385235, -0.161013, 0.6824, -0.0791544, 0.783629, 0.140213, -0.696656, -2.99313e-09, -0.393282, -48.278, -22.1366, -12.9351)
+
+[node name="treefab151" parent="foliage" instance=ExtResource("2_5cebm")]
+transform = Transform3D(-0.652406, -0.161013, -0.434098, -0.13405, 0.783629, -0.0891944, 0.443167, 8.94291e-09, -0.666035, -55.1474, -24.4659, -4.80257)
+
+[node name="bush8" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.00906471, -0.00603798, 0.0279531, 0.00186253, 0.0293861, 0.00574353, -0.028537, 1.10875e-10, 0.00925408, -42.1776, -17.8373, -13.0815)
+
+[node name="bush4" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 41.2729, -20.7485, -44.9769)
+
+[node name="bush5" parent="foliage" instance=ExtResource("4_rvn3y")]
+transform = Transform3D(0.03, 0, 0, 0, 0.0292503, -0.00666483, 0, 0.00666483, 0.0292503, 119.535, -7.29333, 30.6904)
+
+[node name="Node3D" parent="." instance=ExtResource("5_k0gqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -223.559, -289.482)

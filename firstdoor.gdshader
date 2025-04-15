@@ -9,7 +9,7 @@ void fragment() {
 	// Called for every pixel the material is visible on.
 	vec2 base_uv = SCREEN_UV;
 	vec4 albedo_tex = texture(texture_albedo, base_uv);
-	ALBEDO = albedo_tex.rgb;	
+	ALBEDO = albedo_tex.rgb;
 }
 
 //void light() {

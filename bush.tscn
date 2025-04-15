@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://2frqonbkqvmb"]
+[gd_scene load_steps=5 format=4 uid="uid://2frqonbkqvmb"]
 
 [ext_resource type="Texture2D" uid="uid://0wij0t8w0ydw" path="res://wintahtrees_Image_0.png" id="1_nhpc6"]
 
@@ -41,9 +41,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cf1n8")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_52p0w"]
-points = PackedVector3Array(-0.159325, 0.269192, 0.0626704, 0.187909, 0.151954, 0.253572, 0.230976, 0.0119071, -0.0344031, -0.0563504, 0.0768618, -0.24915, -0.23286, 0.123713, -0.337758, -0.236074, 0.244643, 0.00249329, -0.348176, 0.22263, 0.291456, -0.0692061, -0.00684798, 0.382957, 0.398743, -0.226985, 0.152689, 0.264015, 0.00415885, 0.078332, 0.123887, -0.162102, -0.10608, -0.0719058, -0.34147, -0.0335566, -0.39947, -0.470583, 0.0191425, -0.9146, -0.192878, -0.0653736, -0.401656, 0.15543, -0.13444, -0.68114, 0.0757032, 0.0811539, -0.618918, 0.0153829, 0.257241, 0.017056, -0.439662, 0.268952, -0.574823, -0.353563, 0.0715594, -0.741305, -0.00583419, 0.0106063)
-
 [node name="bush" type="Node3D"]
 
 [node name="BushBare1" type="Node3D" parent="."]
@@ -55,7 +52,3 @@ transform = Transform3D(206.479, -16.6595, 174.463, -98.4554, -22.0589, 366.74, 
 transform = Transform3D(1, 7.45058e-09, -1.02795e-07, 0, 1, 0, -2.38069e-08, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_p6l2m")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BushBare1/StaticBody3D"]
-transform = Transform3D(1, 7.45058e-09, -1.02795e-07, 0, 1, 0, -2.38069e-08, 0, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_52p0w")

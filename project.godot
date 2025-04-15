@@ -15,6 +15,10 @@ run/main_scene="res://part1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicManager="*res://music_manager.tscn"
+
 [input]
 
 leftt={

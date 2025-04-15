@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://csm2u4xbnuuvr"]
+
+[ext_resource type="PackedScene" uid="uid://buibutlg2i1hw" path="res://winner.tscn" id="1_srqj4"]
+[ext_resource type="PackedScene" uid="uid://ibwtfac74idf" path="res://s_switch.tscn" id="2_gsh0a"]
+[ext_resource type="PackedScene" uid="uid://jtowr0q5b0pe" path="res://vid2.tscn" id="3_2vaex"]
+[ext_resource type="PackedScene" uid="uid://diy1mhyw8j7on" path="res://vid_3.tscn" id="4_ccjoq"]
+[ext_resource type="PackedScene" uid="uid://010e1qffhwbr" path="res://vid4.tscn" id="5_k7rs5"]
+[ext_resource type="PackedScene" uid="uid://c052jv7onbwu8" path="res://vid_5.tscn" id="6_dsp2v"]
+[ext_resource type="PackedScene" uid="uid://dns0xxsv3s73r" path="res://vid6.tscn" id="7_2l4ln"]
+[ext_resource type="PackedScene" uid="uid://b404dbjpqpbml" path="res://vid7.tscn" id="8_jjkb4"]
+[ext_resource type="PackedScene" uid="uid://dvclyw3tg3js1" path="res://vid8.tscn" id="9_g0ai7"]
+[ext_resource type="PackedScene" uid="uid://cxxvuubhqrn0p" path="res://vid9.tscn" id="10_aj7oy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_isx6y"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rnytc"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="switch2" type="Node3D"]
+
+[node name="floor1" type="StaticBody3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 0.3, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor1"]
+mesh = SubResource("BoxMesh_isx6y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor1"]
+shape = SubResource("ConcavePolygonShape3D_rnytc")
+
+[node name="winner" parent="." instance=ExtResource("1_srqj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90864, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.817457, -0.57599, -1.71658e-08, -0.244717, 0.347307, 0.905258, -0.521419, 0.740009, -0.424863, 0, 107.788, 0)
+light_energy = 0.515
+
+[node name="orn1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.32078)
+
+[node name="s_switch" parent="orn1" instance=ExtResource("2_gsh0a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -13.721, 1.59187, 0.0429549)
+
+[node name="vid2" parent="orn1" instance=ExtResource("3_2vaex")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -13.7311, 1.62427, 3.0456)
+
+[node name="vid3" parent="orn1" instance=ExtResource("4_ccjoq")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 4.731, 0, 2.62268e-07, 0, -3, -13.5964, 2.58443, 5.97081)
+
+[node name="vid4" parent="orn1" instance=ExtResource("5_k7rs5")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -13.6424, 2.86753, 8.99661)
+
+[node name="vid5" parent="orn1" instance=ExtResource("6_dsp2v")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3.16671, -13.6329, 5.16462, 0.103398)
+
+[node name="vid6" parent="orn1" instance=ExtResource("7_2l4ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -13.7634, 1.60668, -2.95384)
+
+[node name="vid7" parent="orn1" instance=ExtResource("8_jjkb4")]
+transform = Transform3D(0.060995, 0, 2.99938, 0, 3, 0, -2.99938, 0, 0.060995, -13.6683, 2.60499, -5.81425)
+
+[node name="vid8" parent="orn1" instance=ExtResource("9_g0ai7")]
+transform = Transform3D(2.99997, 0, -0.0131423, 0, 3, 0, 0.0131423, 0, 2.99997, -13.5504, 6.50618, 5.88984)
+
+[node name="vid9" parent="orn1" instance=ExtResource("10_aj7oy")]
+transform = Transform3D(2.78561, 0, 0, 0, 2.5, 0, 0, 0, 2.97642, -13.6247, 6.31552, -5.75593)
+
+[node name="orn2" type="Node3D" parent="."]
+transform = Transform3D(-0.00111701, 0, -0.499999, 0, 0.5, 0, 0.499999, 0, -0.00111701, -7.04044, 6.10805, -7.45052)
+
+[node name="s_switch" parent="orn2" instance=ExtResource("2_gsh0a")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -13.721, 1.59187, 0.0429549)
+
+[node name="vid2" parent="orn2" instance=ExtResource("3_2vaex")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -13.7311, 1.62427, 3.0456)
+
+[node name="vid3" parent="orn2" instance=ExtResource("4_ccjoq")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 4.731, 0, 2.62268e-07, 0, -3, -13.5964, 2.58443, 5.97081)
+
+[node name="vid4" parent="orn2" instance=ExtResource("5_k7rs5")]
+transform = Transform3D(3, 0, -1.39698e-09, 0, 2.44065, 0, 1.39698e-09, 0, 3, -13.6424, 4.26583, 8.99661)
+
+[node name="vid5" parent="orn2" instance=ExtResource("6_dsp2v")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3.16671, -13.6329, 5.16462, 0.103398)
+
+[node name="vid6" parent="orn2" instance=ExtResource("7_2l4ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -13.7634, 1.60668, -2.95384)
+
+[node name="vid7" parent="orn2" instance=ExtResource("8_jjkb4")]
+transform = Transform3D(0.060995, 0, 2.99938, 0, 3, 0, -2.99938, 0, 0.060995, -13.6683, 2.60499, -5.81425)
+
+[node name="vid8" parent="orn2" instance=ExtResource("9_g0ai7")]
+transform = Transform3D(2.99997, 0, -0.0131423, 0, 3, 0, 0.0131423, 0, 2.99997, -13.5504, 6.50618, 5.88984)
+
+[node name="vid9" parent="orn2" instance=ExtResource("10_aj7oy")]
+transform = Transform3D(2.78561, 0, 0, 0, 2.5, 0, 0, 0, 2.97642, -13.6247, 6.31552, -5.75593)
+
+[node name="jellyfish" parent="." instance=ExtResource("5_k7rs5")]
+transform = Transform3D(-0.000697982, 0.00938318, -18.432, -0.000490593, 1.71368, 0.10093, 0.997784, 0.000849148, -0.0128434, -3.98585, 2.91348, -14.5292)

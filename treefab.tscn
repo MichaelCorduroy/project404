@@ -87,3 +87,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u0qog")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.348732, 11.5214, 0)
 shape = SubResource("CapsuleShape3D_wvget")
+disabled = true

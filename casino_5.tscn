@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://rlai4173rj72"]
+
+[ext_resource type="PackedScene" uid="uid://cc7iituqnw3sq" path="res://roulette.tscn" id="1_vuvyh"]
+[ext_resource type="PackedScene" uid="uid://buibutlg2i1hw" path="res://winner.tscn" id="2_p4xs6"]
+
+[sub_resource type="Environment" id="Environment_t8iuc"]
+background_mode = 1
+background_color = Color(0.367451, 0.166533, 0.207378, 1)
+background_energy_multiplier = 0.59
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqpog"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qvy7t"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="casino5" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_vuvyh")]
+transform = Transform3D(120, 0, 0, 0, 120, 0, 0, 0, 120, -146.046, -8.20209, 51.0026)
+
+[node name="winner" parent="." instance=ExtResource("2_p4xs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3794, 12.0837, -8.74564)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(-0.390972, -0.920403, 0, 0.616657, -0.261946, 0.742374, -0.683283, 0.290247, 0.669986, -1.06626, 9.52259, -11.1161)
+light_energy = 1.323
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t8iuc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.382039, 0.924146, 0, 0.581647, -0.240451, 0.777091, 0.718146, -0.296879, -0.629388, 0, 42.7328, -7.49968)
+light_energy = 3.182
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.83864, 0.214418, -0.500707, 0.544639, -0.318068, 0.776016, 0.00713266, -0.923503, -0.383525, -1.56531, 42.7328, -42.0143)
+light_energy = 3.182
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2.05586, 0, -2.53368, 0, 1, 0, 1.04277, 0, 4.99524, -1.86682, -0.927236, -9.46043)
+mesh = SubResource("BoxMesh_oqpog")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(2.05586, 0, -2.53368, 0, 1, 0, 1.04277, 0, 4.99524, -1.86682, -0.927236, -9.46043)
+shape = SubResource("ConcavePolygonShape3D_qvy7t")

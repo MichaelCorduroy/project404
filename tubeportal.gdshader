@@ -5,7 +5,7 @@ uniform float wave_intensity = 0.2;
 
 void fragment() {
     vec2 uv = UV;
-    
+
     // Create a spiral effect
     float angle = atan(uv.y - 0.5, uv.x - 0.5);
     float radius = length(uv - vec2(0.5));

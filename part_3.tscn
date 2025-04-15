@@ -1,0 +1,659 @@
+[gd_scene load_steps=36 format=4 uid="uid://dfxtn81voaoxt"]
+
+[ext_resource type="PackedScene" uid="uid://cepuffsl5d0b7" path="res://atol.tscn" id="2_8dxs3"]
+[ext_resource type="PackedScene" uid="uid://buibutlg2i1hw" path="res://winner.tscn" id="3_obp5o"]
+[ext_resource type="Texture2D" uid="uid://7qpxcnid04il" path="res://firstdoor_violetdoor.jpg" id="4_6rp2c"]
+[ext_resource type="Script" path="res://door.gd" id="5_v2fco"]
+[ext_resource type="Shader" path="res://firstdoor.gdshader" id="6_fldn1"]
+[ext_resource type="PackedScene" uid="uid://b5rjehx4uomsk" path="res://tubeportal.tscn" id="7_j8wqw"]
+[ext_resource type="PackedScene" uid="uid://c6o04608gpd0m" path="res://palmtrees.tscn" id="8_wyc08"]
+[ext_resource type="PackedScene" uid="uid://boorp0vjba5c1" path="res://boat.tscn" id="8_yu7n3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj8il"]
+sky_top_color = Color(3.85046e-06, 0.620541, 0.715471, 1)
+
+[sub_resource type="Sky" id="Sky_p4uaq"]
+sky_material = SubResource("ProceduralSkyMaterial_fj8il")
+
+[sub_resource type="Environment" id="Environment_a4mjk"]
+background_mode = 2
+sky = SubResource("Sky_p4uaq")
+
+[sub_resource type="Animation" id="Animation_c07rw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/Cube:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0398245, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sgmha"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/Cube:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.91288, 0), Vector3(0, 0.0398245, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.23333, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_j8bic"]
+resource_name = "opendoor"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/Cube:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.83333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0398245, 0), Vector3(0, -1.91337, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.63333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4aoo7"]
+_data = {
+"RESET": SubResource("Animation_c07rw"),
+"closedoor": SubResource("Animation_sgmha"),
+"opendoor": SubResource("Animation_j8bic")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcmyi"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hfnn4"]
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYACgAGAAcABAALAAUABAAIAAsACQAGAAoABAAJAAgABgAJAAQABQAKAAcABQALAAoABQADAAEABQAHAAMADQABAA8AAgAOAAMAAgAMAA4ADQAAAAEAAgANAAwAAAANAAIADgABAAMADgAPAAEABQAAAAQABQABAAAACAAMAA0ACAAJAAwACQAOAAwACQAKAA4ACwAOAAoACwAPAA4ADQALAAgADQAPAAsA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAAAAyO76FwAAAADI7mrqAAAAAFABauoAAAAAUAH6FwAA///I7mrqAAD//8ju+hcAAP//UAFq6gAA//9QAfoXAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lmmcc"]
+resource_name = "firstdoor_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f/+f/3//n/9//1//f/9f/3//X/9//5//P/+f/z//n/8//1//P/9f/z//X/8//5//v/+f/7//3/9//1//v/9f/7//H/9//1//v/+f////nwAA/9//P/9f////X////x//P/9fAACxm/3FPsf/f/+fPqexm5n6Psf/P/+fwBhTYJn6U2CZ+v9fwBjAOP8/U2D9xVNg/cX/Xz6nwDj/f5Ku/z//n2wxsZtkRZKu/3//n5KOsZsAev9fbDFsUf8/U2BkRf9fko5sUf9/U2AAeg=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AQAVAA4AAQAHABUACgAUAAYACgAZABQAIQATABcADAAlABAADAAaACUAHQATACEADAAdABoAEwAdAAwADwAgABYADwAkACAAEQAJAAMAEQAYAAkALQAFADMACAAwAAsACAAqADAALQACAAUACAAtACoAAgAtAAgAMAAFAAsAMAAzAAUAEgAAAA0AEgAEAAAAGwAoACsAGwAeACgAHwAuACkAHwAiAC4AJwAvACMAJwAyAC8ALAAmABwALAAxACYA"),
+"material": SubResource("StandardMaterial3D_bcmyi"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("/////wAA////////AAD///////8AAFTV//8AAAAA/7///wAAAAD/////AAAAAFTV/////////7///////////////////1TV//8AAP///7///wAA////v///AAD//1TVAAD//wAAVNUAAP//AAD//wAA//8AAP//AAAAAAAAVNUAAAAAAABU1QAAAAAAAP+/AAAAAAAA//8AAP////9U1QAA//////+/AAD///////8AAAAA//9U1QAAAAD//1TVAAAAAP///78AAAAA////vwAAyO76F1TVAADI7voXAAAAAMju+hf/PwAAyO5q6lTVAADI7mrqAAAAAMjuauoAAAAAUAFq6lTVAABQAWrqVNUAAFABauoAAAAAUAFq6v8/AABQAfoXVNUAAFAB+hdU1QAAUAH6F/8/AABQAfoX/z///8juauoAAP//yO5q6gAA///I7mrqVNX//8ju+hcAAP//yO76F/8////I7voXVNX//1ABauoAAP//UAFq6v8///9QAWrqVNX//1AB+hf/P///UAH6F/8///9QAfoXVNX/v/+//3//v6oqqioAAP9//7//v6oqqir//////3//v6oqqioAAP9//////6oqqipU1VTV/7//v/9//79U1VTVVNVU1QAA/3//v/+/VNVU1f//////f/+/VNVU1VTVVNUAAP9//////1TVVNX/f/8//////1TVVNX/f/8//7//v1TVVNVU1VTV/7//v////39U1VTVVNVU1f////////9//3//P/+//7+qKqoq/3//P/////+qKqoq/7//v////3+qKqoq/////////3+qKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hfnn4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbu4i"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("4_6rp2c")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nfv65"]
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uyf8f"]
+resource_name = "firstdoor_Cube"
+_surfaces = [{
+"aabb": AABB(-1.87366, -1.11774, -1.98528, 2, 2, 2),
+"attribute_data": PackedByteArray("2bWR5a/Dp9UZxsGYvqbR/amvJu6xxv397bwzuqLPobDsolGZ0LNY18Cz98afpBX9qsYYmaG8GuX//3SurcaB/fGjI+UrtcnwwaO/mAu1prVN1NzHwKOX/jx7//+DqirI"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQAUAA4AAQAHABQACgATAAYACgAXABMAFQAMABIAFQAPAAwAEAAJAAMAEAAWAAkABQAIAAIABQALAAgAEQAAAA0AEQAEAAAA"),
+"material": SubResource("StandardMaterial3D_cbu4i"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(2.2402, 1.72876, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA////////AAB26f////8AAP+///8AAAAAOcP//wAAAAD/////AAAAAP+/////////8Y3////////17/////////+///8AAP//Fcb//wAA//+nhf//AAD///+/AAD//wAAGwAAAP//AAD//wAA//8AAF/JAAAAAAAATwAAAAAAAAAVxgAAAAAAAP//AAD/////GAAAAP////+nhQAA/////3bpAAAAAP//GwAAAAAA//8q5AAAAAD//6CCxYc4+BLLJhZagLUApxdPr7WQSe/FfxwA/////xiQ8rfFfxwASzrZYv/////YfpMADkAdgIB9f/2p3lQ9K0BXgEs62WLFhzj44/8NwP////8SyyYWDkAdgN9kj03/f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nfv65")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7vbk6"]
+points = PackedVector3Array(0.12634, 0.882255, 0.01472, 0.12634, 0.882255, -1.98528, -1.87366, 0.882255, 0.01472, 0.12634, -1.11774, 0.01472, 0.12634, -1.11774, -1.98528, -1.87366, 0.882255, -1.98528, -1.87366, -1.11774, 0.01472, -1.87366, -1.11774, -1.98528)
+
+[sub_resource type="QuadMesh" id="QuadMesh_j1q5d"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_crjs7"]
+viewport_path = NodePath("door/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmxd8"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_fldn1")
+shader_parameter/texture_albedo = SubResource("ViewportTexture_crjs7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_auw5j"]
+size = Vector3(1, 6.19769, 2.52899)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e8p2y"]
+
+[sub_resource type="Shader" id="Shader_p1yhe"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_always, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform sampler2D texture_refraction : filter_linear_mipmap, repeat_enable;
+uniform float refraction : hint_range(-1.0, 1.0, 0.001);
+uniform vec4 refraction_texture_channel;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
+
+uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;
+uniform float normal_scale : hint_range(-16.0, 16.0);
+varying vec3 uv1_triplanar_pos;
+
+uniform float uv1_blend_sharpness : hint_range(0.0, 150.0, 0.001);
+varying vec3 uv1_power_normal;
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	vec3 normal = MODEL_NORMAL_MATRIX * NORMAL;
+
+	TANGENT = vec3(0.0, 0.0, -1.0) * abs(normal.x);
+	TANGENT += vec3(1.0, 0.0, 0.0) * abs(normal.y);
+	TANGENT += vec3(1.0, 0.0, 0.0) * abs(normal.z);
+	TANGENT = inverse(MODEL_NORMAL_MATRIX) * normalize(TANGENT);
+
+	BINORMAL = vec3(0.0, 1.0, 0.0) * abs(normal.x);
+	BINORMAL += vec3(0.0, 0.0, -1.0) * abs(normal.y);
+	BINORMAL += vec3(0.0, 1.0, 0.0) * abs(normal.z);
+	BINORMAL = inverse(MODEL_NORMAL_MATRIX) * normalize(BINORMAL);
+
+	// UV1 Triplanar: Enabled (with World Triplanar)
+	uv1_power_normal = pow(abs(normal), vec3(uv1_blend_sharpness));
+	uv1_triplanar_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz * uv1_scale + uv1_offset;
+	uv1_power_normal /= dot(uv1_power_normal, vec3(1.0));
+	uv1_triplanar_pos *= vec3(1.0, -1.0, 1.0);
+}
+
+vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos) {
+	vec4 samp = vec4(0.0);
+	samp += texture(p_sampler, p_triplanar_pos.xy) * p_weights.z;
+	samp += texture(p_sampler, p_triplanar_pos.xz) * p_weights.y;
+	samp += texture(p_sampler, p_triplanar_pos.zy * vec2(-1.0, 1.0)) * p_weights.x;
+	return samp;
+}
+
+void fragment() {
+	vec4 albedo_tex = triplanar_texture(texture_albedo, uv1_power_normal, uv1_triplanar_pos);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(triplanar_texture(texture_metallic, uv1_power_normal, uv1_triplanar_pos), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(triplanar_texture(texture_roughness, uv1_power_normal, uv1_triplanar_pos), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+
+	// Normal Map: Enabled
+	NORMAL_MAP = triplanar_texture(texture_normal, uv1_power_normal, uv1_triplanar_pos).rgb;
+	NORMAL_MAP_DEPTH = normal_scale;
+
+	// Refraction: Enabled (with normal map texture)
+	vec3 unpacked_normal = NORMAL_MAP;
+	unpacked_normal.xy = unpacked_normal.xy * 2.0 - 1.0;
+	unpacked_normal.z = sqrt(max(0.0, 1.0 - dot(unpacked_normal.xy, unpacked_normal.xy)));
+	vec3 ref_normal = normalize(mix(
+			NORMAL,
+			TANGENT * unpacked_normal.x + BINORMAL * unpacked_normal.y + NORMAL * unpacked_normal.z,
+			NORMAL_MAP_DEPTH));
+	vec2 ref_ofs = SCREEN_UV - ref_normal.xy * dot(triplanar_texture(texture_refraction, uv1_power_normal, uv1_triplanar_pos), refraction_texture_channel) * refraction;
+
+	float ref_amount = 1.0 - albedo.a * albedo_tex.a;
+	EMISSION += textureLod(screen_texture, ref_ofs, ROUGHNESS * 8.0).rgb * ref_amount * EXPOSURE;
+	ALBEDO *= 1.0 - ref_amount;
+	// Force transparency on the material (required for refraction).
+	ALPHA = 1.0;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uv705"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_arl7e"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_uv705")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l4vhm"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_uv705")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_le42e"]
+render_priority = 0
+shader = SubResource("Shader_p1yhe")
+shader_parameter/albedo = Color(0.105882, 1, 1, 0.533333)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/refraction = 0.05
+shader_parameter/refraction_texture_channel = null
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.02, 0.02, 0.02)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = SubResource("NoiseTexture2D_arl7e")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_l4vhm")
+
+[sub_resource type="Animation" id="Animation_rq07c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.4984, -2.88985, -60.8473)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("boat:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.234692, -2.95765, 0.0432362)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("winner:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.8947, 0.710777, -18.9814)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(3.85046e-06, 0.620541, 0.715471, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6463, 0.6558, 0.6708, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorldEnvironment/DirectionalLight3D:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.434]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("portal:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ucfi6"]
+resource_name = "sail"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 54.675),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.4984, -3.39429, -75.2448), Vector3(-3.4984, -3.39429, -341.859)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("boat:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0555771, -2.96247, -0.0100574)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("winner:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.366667, 54.0417),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.51286, -4.19881, -74.96), Vector3(-2.51286, -4.19881, -341.574)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.8, 14.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(3.85046e-06, 0.620541, 0.715471, 1), Color(0.274141, 0.00150085, 0.24257, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.63333, 12.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.6463, 0.6558, 0.6708, 1), Color(0.0322376, 0.034035, 0.0369887, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(20.8, 49.7667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WorldEnvironment/DirectionalLight3D:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(11.2667, 33.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.434, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("portal:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 22.5667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f72h1"]
+_data = {
+"RESET": SubResource("Animation_rq07c"),
+"sail": SubResource("Animation_ucfi6")
+}
+
+[node name="part3" type="Node3D"]
+
+[node name="atol" parent="." instance=ExtResource("2_8dxs3")]
+transform = Transform3D(5, 0, 0, 0, 4.72525, 0.000234955, 0, -0.000247279, 4.49946, 0, -7.83618, -21.288)
+
+[node name="winner" parent="." instance=ExtResource("3_obp5o")]
+transform = Transform3D(1.3, 0, 0, 0, 1.29995, -0.0117302, 0, 0.0117302, 1.29995, 5.8947, 0.710777, -18.9814)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a4mjk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.453306, 0.891355, -2.71546e-07, 0.113106, 0.0575214, 0.991917, 0.88415, 0.449642, -0.126893, 0, 34.183, 0)
+light_energy = 0.434
+
+[node name="door" type="Node3D" parent="."]
+transform = Transform3D(-0.0896418, 0, 0.995974, 0, 1, 0, -0.995974, 0, -0.0896418, 5.01288, -1.71291, -12.2238)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="door"]
+libraries = {
+"": SubResource("AnimationLibrary_4aoo7")
+}
+autoplay = "opendoor"
+
+[node name="Cube_001" type="MeshInstance3D" parent="door"]
+transform = Transform3D(0.252549, 0, 0, 0, 3.40793, 0, 0, 0, 1.83743, -0.315726, 3.70615, 3.28459)
+mesh = SubResource("ArrayMesh_lmmcc")
+skeleton = NodePath("")
+
+[node name="door" type="StaticBody3D" parent="door"]
+
+[node name="Cube" type="MeshInstance3D" parent="door/door"]
+transform = Transform3D(0.229779, 0, 0.0601357, 0, 3.16128, 0, -0.00915567, 0, 1.50922, -0.302841, 3.46549, 2.97962)
+mesh = SubResource("ArrayMesh_uyf8f")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door/door/Cube"]
+script = ExtResource("5_v2fco")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/door/Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -7.45058e-09, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7vbk6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="door/door"]
+transform = Transform3D(-0.239729, 0.964406, -0.111581, -0.964406, -0.249772, -0.0868006, -0.111581, 0.0868006, 0.989957, 0.952262, 2.46531, 1.63486)
+light_color = Color(0.919254, 0.396912, 0.637484, 1)
+
+[node name="portal" type="MeshInstance3D" parent="door"]
+transform = Transform3D(0.163855, 0, -1.09512, 0, 6.52846, 0, 3.32883, 0, 0.0539049, -0.552292, 3.26288, 1.518)
+mesh = SubResource("QuadMesh_j1q5d")
+surface_material_override/0 = SubResource("ShaderMaterial_bmxd8")
+
+[node name="Area3D" type="Area3D" parent="door/portal"]
+transform = Transform3D(0.0147512, 0, 0.29968, 0, 0.153175, 0, -0.910938, 0, 0.0448391, -0.44677, -0.499793, -0.571167)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/portal/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.561817, 3.16766, 1.24869)
+shape = SubResource("BoxShape3D_auw5j")
+
+[node name="SubViewport" type="SubViewport" parent="door"]
+
+[node name="Camera3D" type="Camera3D" parent="door/SubViewport"]
+transform = Transform3D(0.0801732, -0.995881, 0.0423391, 0.168214, 0.0553842, 0.984193, -0.982485, -0.0717839, 0.171961, -27.2944, -135.201, -2.81403)
+
+[node name="portal" parent="." instance=ExtResource("7_j8wqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8861, -321.017, 1.52893)
+
+[node name="boat" parent="." instance=ExtResource("8_yu7n3")]
+transform = Transform3D(-6.88835, -3.8594e-06, -1.24525, 0.294265, 6.80174, -1.6278, 1.20998, -1.65419, -6.69325, -3.4984, -2.88985, -60.8473)
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0.0489254, -7.69661, -19.4778)
+mesh = SubResource("BoxMesh_e8p2y")
+surface_material_override/0 = SubResource("ShaderMaterial_le42e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f72h1")
+}
+autoplay = "sail"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("8_wyc08")]
+transform = Transform3D(2.91975, 0, 0.689232, 0, 3, 0, -0.689232, 0, 2.91975, 7.38796, -2.94626, -22.2983)
